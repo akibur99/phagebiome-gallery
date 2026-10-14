@@ -1,0 +1,5 @@
+.pgl-image-picker .pgl-preview{margin-bottom:8px}
+.pgl-image-picker .pgl-preview-img{max-width:320px;height:auto;border-radius:6px;border:1px solid #ccd0d4}
+.pgl-image-picker .pgl-no-image{display:inline-block;padding:24px 32px;border:1px dashed #ccd0d4;border-radius:6px;color:#646970}
+.pgl-fields label{font-weight:600}
+.pgl-order-status{color:#646970}

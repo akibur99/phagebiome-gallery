@@ -1,0 +1,11 @@
+[
+  {"key": "pgl-ref-01", "title": "Wet-lab research", "cats": ["lab"], "src": "https://images.unsplash.com/photo-1579165466741-7f35e4755660?q=80&w=1400&auto=format&fit=crop", "desc": "Bacterial culture and phage isolation at SUST"},
+  {"key": "pgl-ref-02", "title": "Microscopy suite", "cats": ["research"], "src": "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=1400&auto=format&fit=crop", "desc": "Plaque assays and host-range characterization"},
+  {"key": "pgl-ref-03", "title": "GNOBB International Conference 2025", "cats": ["conferences"], "src": "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=1400&auto=format&fit=crop", "desc": "Team presenting phage genomics"},
+  {"key": "pgl-ref-04", "title": "ASM Conference 2023", "cats": ["conferences"], "src": "https://images.unsplash.com/photo-1614935151651-0bea6508db6b?q=80&w=1400&auto=format&fit=crop", "desc": "K. pneumoniae phage poster"},
+  {"key": "pgl-ref-05", "title": "Clinical sampling", "cats": ["field"], "src": "https://images.unsplash.com/photo-1582719471384-894fbb16e074?q=80&w=1400&auto=format&fit=crop", "desc": "Hospital sewage and surface swabs"},
+  {"key": "pgl-ref-06", "title": "Genomics workstation", "cats": ["research"], "src": "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=1400&auto=format&fit=crop", "desc": "Comparative genomics and taxonomy"},
+  {"key": "pgl-ref-07", "title": "Team in laboratory", "cats": ["lab"], "src": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=1400&auto=format&fit=crop", "desc": "MS thesis researchers"},
+  {"key": "pgl-ref-08", "title": "International Biotechnology Conference, BRAC 2025", "cats": ["events"], "src": "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?q=80&w=1400&auto=format&fit=crop", "desc": "Invited session on phage therapy"},
+  {"key": "pgl-ref-09", "title": "Biobanking", "cats": ["research"], "src": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=1400&auto=format&fit=crop", "desc": "−80 °C phage and host archive"}
+]

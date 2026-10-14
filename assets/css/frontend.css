@@ -1,0 +1,61 @@
+/* Phagebiome Gallery frontend — visual parity with the reference gallery
+   component (Abid/css/style.css + responsive.css), scoped under .phagebiome-gallery.
+   Lightbox container .pgl-lightbox is unique to this plugin. */
+.phagebiome-gallery{container-type:inline-size;max-width:1200px;margin:0 auto;min-width:0;
+  font-family:"Inter","Manrope","Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:15px;line-height:1.66;color:#0e2225}
+.phagebiome-gallery *,.phagebiome-gallery *::before,.phagebiome-gallery *::after{box-sizing:border-box}
+.phagebiome-gallery a{color:#0E6E64;text-decoration:none}
+.phagebiome-gallery a:hover{color:#0B3D3A}
+.phagebiome-gallery :focus-visible{outline:2px solid #0E6E64;outline-offset:3px}
+/* filters */
+.phagebiome-gallery .pgl-filters{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 24px}
+.phagebiome-gallery .pgl-filter{display:inline-flex;align-items:center;justify-content:center;border:1px solid #cbd8d4;background:#fff;padding:9px 16px;border-radius:6px;font-weight:700;cursor:pointer;color:#0B3D3A;font-family:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,monospace;font-size:.78rem;letter-spacing:.04em;text-decoration:none;line-height:1.4;min-height:44px}
+.phagebiome-gallery .pgl-filter:hover{border-color:#0E6E64;color:#0B3D3A}
+.phagebiome-gallery .pgl-filter.is-active{background:#0B3D3A;color:#fff;border-color:#0B3D3A}
+/* grid */
+.phagebiome-gallery .pgl-grid{display:grid;grid-template-columns:repeat(var(--pgl-cd,3),1fr);gap:14px;counter-reset:pglshot}
+.phagebiome-gallery .pgl-item{position:relative;margin:0;border-radius:14px;overflow:hidden;background:#0B2528;border:1px solid #d6e1de;aspect-ratio:4/3;cursor:pointer;counter-increment:pglshot;min-width:0}
+.phagebiome-gallery .pgl-item a.pgl-open{display:block;width:100%;height:100%;cursor:pointer}
+.phagebiome-gallery .pgl-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:saturate(.94);display:block}
+.phagebiome-gallery .pgl-item:hover img,.phagebiome-gallery .pgl-item:focus-within img{transform:scale(1.05)}
+.phagebiome-gallery .pgl-item figcaption{position:absolute;inset:auto 0 0 0;padding:42px 16px 14px;background:linear-gradient(to top,rgba(6,24,27,.88),rgba(6,24,27,0));color:#c8ddd9;font-size:.78rem;line-height:1.5;pointer-events:none;overflow-wrap:break-word}
+.phagebiome-gallery .pgl-item figcaption strong{display:block;color:#fff;font-size:.95rem;letter-spacing:-.01em;margin-bottom:2px}
+.phagebiome-gallery .pgl-item figcaption strong::before{content:counter(pglshot,decimal-leading-zero) " / ";font-family:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,monospace;font-size:.62rem;letter-spacing:.16em;color:#f6ecdb;font-weight:700}
+.phagebiome-gallery .pgl-item::after{content:"OPEN ?";position:absolute;top:12px;right:12px;font-family:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,monospace;font-size:.6rem;letter-spacing:.18em;color:#fff;background:rgba(6,24,27,.55);border:1px solid rgba(255,255,255,.35);padding:6px 10px;border-radius:6px;opacity:0;transform:translateY(-4px);transition:opacity .2s,transform .2s;pointer-events:none}
+.phagebiome-gallery .pgl-item:hover::after,.phagebiome-gallery .pgl-item:focus-within::after{opacity:1;transform:none}
+.phagebiome-gallery .pgl-empty{color:#5a7371;font-size:.87rem;margin:0}
+/* narrow: viewport (fallback) */
+@media(max-width:1080px){
+  .phagebiome-gallery .pgl-grid{grid-template-columns:repeat(var(--pgl-ct,2),1fr)}
+}
+@media(max-width:760px){
+  .phagebiome-gallery .pgl-grid{grid-template-columns:repeat(var(--pgl-cm,1),1fr);gap:12px}
+  .phagebiome-gallery .pgl-item{aspect-ratio:16/10}
+}
+/* narrow: embedded container (Elementor columns) */
+@container (max-width:1080px){
+  .phagebiome-gallery .pgl-grid{grid-template-columns:repeat(var(--pgl-ct,2),1fr)}
+}
+@container (max-width:760px){
+  .phagebiome-gallery .pgl-grid{grid-template-columns:repeat(var(--pgl-cm,1),1fr);gap:12px}
+  .phagebiome-gallery .pgl-item{aspect-ratio:16/10}
+}
+/* lightbox */
+.pgl-lightbox{position:fixed;inset:0;background:rgba(6,24,27,.94);display:none;place-items:center;z-index:9999;padding:24px;box-sizing:border-box}
+.pgl-lightbox.open{display:grid}
+.pgl-lightbox *,.pgl-lightbox *::before,.pgl-lightbox *::after{box-sizing:border-box}
+.pgl-lightbox img{max-width:min(1000px,92vw);max-height:78vh;width:auto;height:auto;object-fit:contain;border-radius:12px;background:#0B2528}
+.pgl-lightbox .pgl-lb-ui{position:absolute;inset:auto 0 26px 0;display:flex;gap:10px;justify-content:center;align-items:center;color:#fff;flex-wrap:wrap;padding:0 16px}
+.pgl-lightbox .pgl-lb-cap{font-family:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,monospace;font-size:.78rem;letter-spacing:.04em;max-width:100%;text-align:center}
+.pgl-lightbox button{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:8px;padding:10px 18px;cursor:pointer;font-weight:700;font-family:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,monospace;font-size:.76rem;letter-spacing:.08em;min-height:44px}
+.pgl-lightbox button:hover{background:rgba(255,255,255,.22)}
+.pgl-lightbox :focus-visible{outline:2px solid #fff;outline-offset:3px}
+.pgl-lightbox button[hidden]{display:none}
+@media(max-width:760px){
+  .pgl-lightbox .pgl-lb-ui{gap:8px}
+  .pgl-lightbox .pgl-lb-cap{flex-basis:100%;text-align:center;order:-1}
+}
+@media(prefers-reduced-motion:reduce){
+  .phagebiome-gallery *,.pgl-lightbox *{transition:none!important;animation:none!important}
+}
